@@ -143,4 +143,6 @@ def sky(dem,tt,flag):
   M2[0,2]=M2[0,2]-0.3*imax-1
   M2[1,2]=M2[1,2]-0.3*jmax-1 
   eview = cv2.warpAffine(dview,M2,(imax,jmax))
-  if flag < 2: return eview  hf=(np.pi/2-atan(eview)) > 0.0 < (np.pi/2)  return coss*np.sin(hf)^2+sins*cosfa*(hf-np.sin(hf)*np.cos(hf))  
+  if flag < 2: return eview
+  eview[eview < 0.0] = 0.0
+  hf=np.pi/2-np.arctan(eview)  return coss*np.sin(hf)**2+sins*cosfa*(hf-np.sin(hf)*np.cos(hf))  
