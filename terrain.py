@@ -50,7 +50,7 @@ ut.dd=ut.dx
 d_angle=float(param[2])
 dview=ut.sky(dem,d_angle,1)
 
-ut.write_tif('el_angle.tif',dview.astype(np.float32))
+ut.write_tif('angle'+param[2]+'.tif',dview.astype(np.float32))
 
 exit()
 
